@@ -31,12 +31,15 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 
+import { HttpClientModule } from '@angular/common/http';
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
-
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { baseURL } from './shared/baseurl';
+
 
 
 
@@ -54,6 +57,7 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     FormsModule,
@@ -76,7 +80,9 @@ import { LoginComponent } from './login/login.component';
   providers: [
   	DishService,
   	PromotionService,
-  	LeaderService
+  	LeaderService,
+  	ProcessHTTPMsgService,
+  	{provide: 'BaseURL', useValue: baseURL}
   ],
   entryComponents: [
   	LoginComponent
