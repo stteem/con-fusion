@@ -69,8 +69,8 @@
 		  		  formControlName="rating"
 		  		  [displayWith]="formatLabel"
 				  tickInterval="1000"
+				  rating="5"
 				  min="2"
-				  defaultValue="4"
 				  max="5">
 				</mat-slider>
 				<mat-error *ngIf="formErrors.rating">{{formErrors.rating}}</mat-error>
