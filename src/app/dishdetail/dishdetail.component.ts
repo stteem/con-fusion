@@ -137,9 +137,14 @@ onSubmit() {
     this.dishCopy.comments.push(this.comment);
     this.dishservice.putDish(this.dishCopy)
     	.subscribe(dish => {
-    		this.dish = dish; this.dishCopy = dish;
+    		this.dish = dish; 
+        this.dishCopy = dish;
     	},
-    	errMess => { this.dish = null; this.dishCopy = null; this.errMess = <any>errMess; });
+    	errMess => { 
+        this.dish = null; 
+        this.dishCopy = null; 
+        this.errMess = <any>errMess; 
+      });
     this.commentFormDirective.resetForm();
     this.commentForm.reset({
     	author: '',
